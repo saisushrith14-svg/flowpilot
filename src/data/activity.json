@@ -1,0 +1,91 @@
+[
+  {
+    "id": "act-1",
+    "type": "task",
+    "userId": "user-1",
+    "action": "created task",
+    "target": "Fix dashboard chart rendering bug",
+    "projectId": "proj-1",
+    "createdAt": "2026-07-04T16:30:00Z"
+  },
+  {
+    "id": "act-2",
+    "type": "comment",
+    "userId": "user-5",
+    "action": "commented on",
+    "target": "Design landing page hero section",
+    "projectId": "proj-5",
+    "createdAt": "2026-07-03T15:00:00Z"
+  },
+  {
+    "id": "act-3",
+    "type": "file",
+    "userId": "user-4",
+    "action": "uploaded",
+    "target": "schema-draft.graphql",
+    "projectId": "proj-3",
+    "createdAt": "2026-07-01T14:00:00Z"
+  },
+  {
+    "id": "act-4",
+    "type": "task",
+    "userId": "user-3",
+    "action": "completed task",
+    "target": "Audit existing components",
+    "projectId": "proj-6",
+    "createdAt": "2026-06-08T14:00:00Z"
+  },
+  {
+    "id": "act-5",
+    "type": "project",
+    "userId": "user-2",
+    "action": "updated project",
+    "target": "Customer Onboarding Flow",
+    "projectId": "proj-4",
+    "createdAt": "2026-07-02T09:20:00Z"
+  },
+  {
+    "id": "act-6",
+    "type": "team",
+    "userId": "user-6",
+    "action": "joined project",
+    "target": "API Gateway Migration",
+    "projectId": "proj-3",
+    "createdAt": "2026-07-01T10:00:00Z"
+  },
+  {
+    "id": "act-7",
+    "type": "task",
+    "userId": "user-1",
+    "action": "moved task to In Progress",
+    "target": "Build offline sync module",
+    "projectId": "proj-2",
+    "createdAt": "2026-06-28T11:00:00Z"
+  },
+  {
+    "id": "act-8",
+    "type": "task",
+    "userId": "user-3",
+    "action": "moved task to Review",
+    "target": "Draft GraphQL schema",
+    "projectId": "proj-3",
+    "createdAt": "2026-07-03T10:00:00Z"
+  },
+  {
+    "id": "act-9",
+    "type": "system",
+    "userId": "user-1",
+    "action": "scheduled maintenance",
+    "target": "July 8 maintenance window",
+    "createdAt": "2026-06-30T12:00:00Z"
+  },
+  {
+    "id": "act-10",
+    "type": "task",
+    "userId": "user-5",
+    "action": "completed task",
+    "target": "Create welcome email sequence",
+    "projectId": "proj-4",
+    "createdAt": "2026-06-14T16:00:00Z"
+  }
+]

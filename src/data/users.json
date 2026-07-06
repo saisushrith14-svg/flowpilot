@@ -1,0 +1,80 @@
+[
+  {
+    "id": "user-1",
+    "name": "Sarah Chen",
+    "email": "sarah.chen@flowpilot.io",
+    "role": "admin",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+    "department": "Engineering",
+    "phone": "+1 (415) 555-0142",
+    "bio": "Full-stack engineer with 8 years of experience building SaaS products. Passionate about developer experience and clean architecture.",
+    "skills": ["React", "TypeScript", "Node.js", "System Design", "Leadership"],
+    "joinedAt": "2023-01-15",
+    "projectIds": ["proj-1", "proj-2", "proj-3"]
+  },
+  {
+    "id": "user-2",
+    "name": "Marcus Johnson",
+    "email": "marcus.j@flowpilot.io",
+    "role": "manager",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus",
+    "department": "Product",
+    "phone": "+1 (212) 555-0198",
+    "bio": "Product manager focused on user-centric design and agile delivery. Previously at Stripe and Figma.",
+    "skills": ["Product Strategy", "User Research", "Roadmapping", "Agile", "Analytics"],
+    "joinedAt": "2023-03-22",
+    "projectIds": ["proj-1", "proj-4", "proj-5"]
+  },
+  {
+    "id": "user-3",
+    "name": "Elena Rodriguez",
+    "email": "elena.r@flowpilot.io",
+    "role": "member",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Elena",
+    "department": "Design",
+    "phone": "+1 (310) 555-0167",
+    "bio": "UI/UX designer creating intuitive interfaces. Specializes in design systems and accessibility.",
+    "skills": ["Figma", "UI Design", "Prototyping", "Accessibility", "Design Systems"],
+    "joinedAt": "2023-06-10",
+    "projectIds": ["proj-2", "proj-3", "proj-6"]
+  },
+  {
+    "id": "user-4",
+    "name": "James Park",
+    "email": "james.park@flowpilot.io",
+    "role": "member",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=James",
+    "department": "Engineering",
+    "phone": "+1 (650) 555-0133",
+    "bio": "Backend engineer specializing in distributed systems and API design. Open source contributor.",
+    "skills": ["Python", "PostgreSQL", "Docker", "AWS", "GraphQL"],
+    "joinedAt": "2023-08-05",
+    "projectIds": ["proj-1", "proj-4"]
+  },
+  {
+    "id": "user-5",
+    "name": "Aisha Patel",
+    "email": "aisha.p@flowpilot.io",
+    "role": "member",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Aisha",
+    "department": "Marketing",
+    "phone": "+1 (408) 555-0189",
+    "bio": "Growth marketer with expertise in content strategy and campaign analytics for B2B SaaS.",
+    "skills": ["Content Marketing", "SEO", "Analytics", "Copywriting", "Social Media"],
+    "joinedAt": "2024-01-20",
+    "projectIds": ["proj-5", "proj-6"]
+  },
+  {
+    "id": "user-6",
+    "name": "David Kim",
+    "email": "david.kim@flowpilot.io",
+    "role": "viewer",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=David",
+    "department": "Operations",
+    "phone": "+1 (206) 555-0156",
+    "bio": "Operations lead ensuring smooth cross-team coordination and process optimization.",
+    "skills": ["Process Management", "Reporting", "Vendor Relations", "Budgeting"],
+    "joinedAt": "2024-04-12",
+    "projectIds": ["proj-3", "proj-5"]
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "notif-1",
+    "title": "Task assigned to you",
+    "message": "Sarah Chen assigned you 'Fix dashboard chart rendering bug' in Platform Redesign.",
+    "category": "task",
+    "read": false,
+    "createdAt": "2026-07-04T16:35:00Z",
+    "link": "/tasks"
+  },
+  {
+    "id": "notif-2",
+    "title": "Comment on your task",
+    "message": "Aisha Patel commented on 'Design landing page hero section': Love the direction!",
+    "category": "task",
+    "read": false,
+    "createdAt": "2026-07-03T15:05:00Z",
+    "link": "/tasks"
+  },
+  {
+    "id": "notif-3",
+    "title": "Project milestone reached",
+    "message": "Customer Onboarding Flow has reached 85% completion.",
+    "category": "project",
+    "read": false,
+    "createdAt": "2026-07-02T09:25:00Z",
+    "link": "/projects/proj-4"
+  },
+  {
+    "id": "notif-4",
+    "title": "New team member",
+    "message": "David Kim joined the API Gateway Migration project.",
+    "category": "team",
+    "read": true,
+    "createdAt": "2026-07-01T10:00:00Z",
+    "link": "/team"
+  },
+  {
+    "id": "notif-5",
+    "title": "File uploaded",
+    "message": "James Park uploaded schema-draft.graphql to API Gateway Migration.",
+    "category": "file",
+    "read": true,
+    "createdAt": "2026-07-01T14:05:00Z",
+    "link": "/files"
+  },
+  {
+    "id": "notif-6",
+    "title": "Deadline approaching",
+    "message": "Task 'Redesign navigation sidebar' is due in 6 days.",
+    "category": "task",
+    "read": false,
+    "createdAt": "2026-07-04T08:00:00Z",
+    "link": "/tasks"
+  },
+  {
+    "id": "notif-7",
+    "title": "System maintenance",
+    "message": "Scheduled maintenance window on July 8, 2026 from 2:00 AM to 4:00 AM EST.",
+    "category": "system",
+    "read": true,
+    "createdAt": "2026-06-30T12:00:00Z"
+  },
+  {
+    "id": "notif-8",
+    "title": "Task moved to Review",
+    "message": "'Draft GraphQL schema' has been moved to Review status.",
+    "category": "task",
+    "read": true,
+    "createdAt": "2026-07-03T10:05:00Z",
+    "link": "/kanban"
+  }
+]

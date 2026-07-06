@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-secondary: #10b981;
+  --color-accent: #f97316;
+  --color-yellow: #facc15;
+  --color-pink: #ec4899;
+  --color-purple: #8b5cf6;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-background: #fffdf7;
+  --color-surface: #ffffff;
+  --color-ink: #111827;
+  --color-border: #111827;
+  --color-muted: #64748b;
+  --color-foreground: #1e293b;
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight text-ink;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #11182740 transparent;
+  }
+
+  .shadow-brutal {
+    box-shadow: 4px 4px 0 0 #111827;
+  }
+
+  .shadow-brutal-sm {
+    box-shadow: 2px 2px 0 0 #111827;
+  }
+
+  .shadow-brutal-lg {
+    box-shadow: 6px 6px 0 0 #111827;
+  }
+
+  .shadow-brutal-hover {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .shadow-brutal-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #111827;
+  }
+
+  .shadow-brutal-active:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 #111827;
+  }
+
+  .border-brutal {
+    border: 2.5px solid #111827;
+  }
+
+  .text-ink {
+    color: #111827;
+  }
+}
