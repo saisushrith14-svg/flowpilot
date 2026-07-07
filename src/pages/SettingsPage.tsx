@@ -5,6 +5,8 @@ import { Tabs } from '@/components/ui/Tabs';
 import { Button } from '@/components/ui/Button';
 import { useApp } from '@/context/AppContext';
 import type { AppSettings } from '@/types';
+import { ChangePasswordModal } from '@/components/auth/ChangePasswordModal';// import the schema for changing password
+
 
 const settingsTabs = [
   { id: 'general', label: 'General' },
@@ -18,6 +20,7 @@ export function SettingsPage() {
   const { settings, updateSettings } = useApp();
   const [activeTab, setActiveTab] = useState('general');
   const [localSettings, setLocalSettings] = useState<AppSettings>(settings);
+  const [passwordModalOpen, setPasswordModalOpen] = useState(false); // State to control the visibility of the Change Password modal
 
   const handleChange = (key: keyof AppSettings, value: string | number | boolean) => {
     setLocalSettings((prev) => ({ ...prev, [key]: value }));
@@ -153,7 +156,9 @@ export function SettingsPage() {
                   max={120}
                 />
               </div>
-              <Button variant="outline">Change Password</Button>
+              <Button variant="outline" 
+                onClick={() => setPasswordModalOpen(true)} //opens change password modal when clicked
+                >Change Password</Button>
             </div>
           )}
 
@@ -193,6 +198,10 @@ export function SettingsPage() {
           </div>
         </Tabs>
       </Card>
+      <ChangePasswordModal //creating component
+      open={passwordModalOpen}
+      onClose={() => setPasswordModalOpen(false)}
+      />
     </div>
   );
 }
