@@ -4,6 +4,8 @@ import {
   startOfMonth,
   endOfMonth,
   eachDayOfInterval,
+  startOfWeek,
+  endOfWeek,
   isSameMonth,
   isSameDay,
   isToday,
@@ -27,12 +29,14 @@ export function CalendarPage() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const days = useMemo(() => {
-    const start = startOfMonth(currentMonth);
-    const end = endOfMonth(currentMonth);
-    return eachDayOfInterval({ start, end });
-  }, [currentMonth]);
+    const startOfCurrentMonth = startOfMonth(currentMonth);
+    const endOfCurrentMonth = endOfMonth(currentMonth);
+    
+    const gridStart = startOfWeek(startOfCurrentMonth, { weekStartsOn: 0 });
+    const gridEnd = endOfWeek(endOfCurrentMonth, { weekStartsOn: 0 });
 
-  const startDay = startOfMonth(currentMonth).getDay();
+    return eachDayOfInterval({ start: gridStart, end: gridEnd });
+  }, [currentMonth]);
 
   const tasksForDate = (date: Date) =>
     tasks.filter((t) => isSameDay(parseISO(t.dueDate), date));
@@ -76,9 +80,6 @@ export function CalendarPage() {
         </div>
 
         <div className="grid grid-cols-7 gap-1">
-          {Array.from({ length: startDay }).map((_, i) => (
-            <div key={`empty-${i}`} className="h-24" />
-          ))}
           {days.map((day) => {
             const dayTasks = tasksForDate(day);
             const inMonth = isSameMonth(day, currentMonth);
