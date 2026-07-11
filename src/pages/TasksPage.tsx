@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo } from 'react'; 
 import { Plus, CheckSquare, Trash2, Undo2 } from 'lucide-react';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { SearchBar } from '@/components/ui/SearchBar';
@@ -29,7 +29,6 @@ export function TasksPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
   const [deleteId, setDeleteId] = useState<string | null>(null);
-  const sortedRef = useRef<Task[]>([]);
   const debouncedSearch = useDebounce(search);
 
   const filtered = useMemo(() => {
@@ -54,21 +53,19 @@ export function TasksPage() {
     return result;
   }, [tasks, debouncedSearch, statusFilter, priorityFilter]);
 
-  const sorted = useMemo(() => {
-    const priorityOrder = { urgent: 0, high: 1, medium: 2, low: 3 };
-    const list = sortedRef.current.length > 0 && statusFilter === 'all' ? sortedRef.current : [...filtered];
-    list.sort((a, b) => {
-      switch (sortBy) {
-        case 'title': return a.title.localeCompare(b.title);
-        case 'dueDate': return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
-        case 'priority': return (priorityOrder[a.priority] ?? 4) - (priorityOrder[b.priority] ?? 4);
-        case 'status': return a.status.localeCompare(b.status);
-        default: return 0;
-      }
-    });
-    sortedRef.current = list;
-    return list;
-  }, [filtered, sortBy, statusFilter]);
+ const sorted = useMemo(() => {
+  const priorityOrder = { urgent: 0, high: 1, medium: 2, low: 3 };
+
+  return [...filtered].sort((a, b) => {
+    switch (sortBy) {
+      case 'title': return a.title.localeCompare(b.title);
+      case 'dueDate': return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
+      case 'priority': return (priorityOrder[a.priority] ?? 4) - (priorityOrder[b.priority] ?? 4);
+      case 'status': return a.status.localeCompare(b.status);
+      default: return 0;
+    }
+  });
+}, [filtered, sortBy]);
 
   const { currentPage, totalPages, paginatedItems, goToPage } = usePagination(
     sorted,
