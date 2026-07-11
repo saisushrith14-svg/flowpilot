@@ -52,7 +52,7 @@ export function LandingNav() {
           )}
         </div>
 
-        <button className="md:hidden p-2 rounded-xl border-2 border-ink" onClick={() => setOpen(true)}>
+        <button className="md:hidden p-2 rounded-xl border-2 border-ink" onClick={() => setOpen(!open)}>
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
