@@ -11,7 +11,7 @@ export function LandingNav() {
   const { isAuthenticated } = useAuth();
 
   const links = [
-    { href: '#featuress', label: 'Features' },
+    { href: '#features', label: 'Features' },
     { href: '#how-it-works', label: 'How it works' },
     { href: '#testimonials', label: 'Stories' },
     { href: '#faq', label: 'FAQ' },
