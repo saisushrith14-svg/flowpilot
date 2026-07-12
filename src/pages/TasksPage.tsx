@@ -29,18 +29,16 @@ export function TasksPage() {
   const [sortBy, setSortBy] = useState<SortField>('dueDate');
   const [modalOpen, setModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
- const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-useEffect(() => {
-  if (searchParams.get('newTask') === 'true') {
-    setEditingTask(null);
-    setModalOpen(true);
-  }
-}, [searchParams]); 
+  useEffect(() => {
+    if (searchParams.get('newTask') === 'true') {
+      setEditingTask(null);
+      setModalOpen(true);
+    }
+  }, [searchParams]); 
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const debouncedSearch = useDebounce(search);
-
-  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     const taskId = searchParams.get('taskId');
