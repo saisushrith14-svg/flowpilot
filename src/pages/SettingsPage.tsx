@@ -147,7 +147,19 @@ export function SettingsPage() {
           )}
 
           {activeTab === 'appearance' && (
-            <div className="space-y-4 max-w-lg">
+            <div className="space-y-5 max-w-lg">
+              <div className="pb-4 border-b border-border">
+                <label className="block text-sm font-bold mb-1.5 text-ink">Theme</label>
+                <select
+                  value={localSettings.theme || 'light'}
+                  onChange={(e) => handleChange('theme', e.target.value)}
+                  className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                >
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                  <option value="system">System Preference</option>
+                </select>
+              </div>
               {[
                 { key: 'compactMode' as const, label: 'Compact Mode', desc: 'Reduce spacing for denser layouts' },
                 { key: 'showAvatars' as const, label: 'Show Avatars', desc: 'Display user avatars throughout the app' },
@@ -155,7 +167,7 @@ export function SettingsPage() {
               ].map((item) => (
                 <div key={item.key} className="flex items-center justify-between py-2">
                   <div>
-                    <p className="text-sm font-medium">{item.label}</p>
+                    <p className="text-sm font-medium text-ink">{item.label}</p>
                     <p className="text-xs text-muted">{item.desc}</p>
                   </div>
                   <button

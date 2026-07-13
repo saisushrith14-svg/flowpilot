@@ -104,6 +104,7 @@ export const NOTIFICATION_CATEGORIES = [
 ];
 
 export const DEFAULT_SETTINGS = {
+  theme: 'light' as const,
   language: 'en',
   timezone: 'America/New_York',
   dateFormat: 'MMM d, yyyy',
