@@ -120,6 +120,7 @@ export interface UserProfile {
 }
 
 export interface AppSettings {
+  theme?: 'light' | 'dark' | 'system';
   language: string;
   timezone: string;
   dateFormat: string;

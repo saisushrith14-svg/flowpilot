@@ -77,7 +77,7 @@ export function LandingNav() {
                 </Link>
                 {!isAuthenticated && (
                   <Link to={ROUTES.LOGIN} onClick={() => setOpen(false)}>
-                    <Button variant="outline" className="w-full">Sign In</Button>
+                    <Button variant="primary" className="w-full">Sign In</Button>
                   </Link>
                 )}
               </div>

@@ -59,7 +59,7 @@ export function GlobalSearch() {
       />
 
       {open && hasQuery && (
-        <div className="absolute top-full left-0 z-30 mt-2 w-full rounded-2xl border-2 border-ink bg-white shadow-brutal max-h-[28rem] overflow-y-auto">
+        <div className="absolute top-full left-0 z-30 mt-2 w-full rounded-2xl border-2 border-ink bg-surface shadow-brutal max-h-[28rem] overflow-y-auto">
           {!hasResults ? (
             <div className="px-4 py-6 text-center text-sm font-semibold text-muted">
               No results for &ldquo;{debouncedQuery}&rdquo;
