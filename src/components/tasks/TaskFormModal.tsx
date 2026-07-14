@@ -13,7 +13,14 @@ const schema = z.object({
   description: z.string(),
   priority: z.string(),
   status: z.string(),
-  dueDate: z.string().optional(),
+  dueDate: z.string().optional().refine(
+    (val) => {
+      if (!val) return true;
+      const year = val.split('-')[0];
+      return year.length === 4 && parseInt(year) <= 2030;
+    },
+    { message: 'Year must be 4 digits and cannot exceed 2030' }
+  ),
   projectId: z.string().min(1, 'Project is required'),
   assigneeId: z.string().min(1, 'Assignee is required'),
   labels: z.string(),
@@ -163,9 +170,11 @@ export function TaskFormModal({ open, onClose, onSubmit, task, defaultProjectId,
             <label className="block text-sm font-medium mb-1.5">Due Date</label>
             <input
               type="date"
+              max="2030-12-31"
               {...register('dueDate')}
               className="w-full rounded-lg border border-border px-3 py-2 text-sm"
             />
+            {errors.dueDate && <p className="mt-1 text-xs text-danger">{errors.dueDate.message}</p>}
           </div>
         </div>
 

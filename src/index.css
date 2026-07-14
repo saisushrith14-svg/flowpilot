@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #3b82f6;
   --color-primary-dark: #2563eb;
@@ -16,7 +18,52 @@
   --color-border: #111827;
   --color-muted: #64748b;
   --color-foreground: #1e293b;
+  --color-project-col-bg: #fef9e3;
   --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+}
+
+.dark {
+  --color-background: #0d0d10;
+  --color-surface: #1a1a1f;
+  --color-foreground: #f4f4f5;
+  --color-ink: #ffffff;
+  --color-border: #ffffff;
+  --color-muted: #a1a1aa;
+  --color-project-col-bg: #1c1a12;
+}
+
+/* Adapt common hover utilities and options inside dark mode */
+.dark .hover\:bg-slate-50:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .hover\:bg-slate-100:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .hover\:bg-background:hover {
+  background-color: var(--color-background) !important;
+}
+
+.dark .bg-slate-50 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .bg-slate-50\/80 {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.dark .bg-slate-50\/50 {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark select option {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
 }
 
 @layer base {
@@ -25,7 +72,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-200;
   }
 
   #root {
@@ -44,15 +91,15 @@
   }
 
   .shadow-brutal {
-    box-shadow: 4px 4px 0 0 #111827;
+    box-shadow: 4px 4px 0 0 var(--color-border);
   }
 
   .shadow-brutal-sm {
-    box-shadow: 2px 2px 0 0 #111827;
+    box-shadow: 2px 2px 0 0 var(--color-border);
   }
 
   .shadow-brutal-lg {
-    box-shadow: 6px 6px 0 0 #111827;
+    box-shadow: 6px 6px 0 0 var(--color-border);
   }
 
   .shadow-brutal-hover {
@@ -61,19 +108,19 @@
 
   .shadow-brutal-hover:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 0 #111827;
+    box-shadow: 6px 6px 0 0 var(--color-border);
   }
 
   .shadow-brutal-active:active {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 0 #111827;
+    box-shadow: 2px 2px 0 0 var(--color-border);
   }
 
   .border-brutal {
-    border: 2.5px solid #111827;
+    border: 2.5px solid var(--color-border);
   }
 
   .text-ink {
-    color: #111827;
+    color: var(--color-ink);
   }
 }

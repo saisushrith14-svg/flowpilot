@@ -19,9 +19,9 @@ export function formatFileSize(bytes: number): string {
 
 export function getDueDateLabel(date: string): { label: string; className: string } {
   const parsed = parseISO(date);
-  if (isPast(parsed)) return { label: 'Overdue', className: 'text-red-600' };
-  if (isToday(parsed)) return { label: 'Today', className: 'text-amber-600' };
-  if (isTomorrow(parsed)) return { label: 'Tomorrow', className: 'text-blue-600' };
+ if (isToday(parsed)) return { label: 'Today', className: 'text-amber-600' };
+if (isPast(parsed)) return { label: 'Overdue', className: 'text-red-600' };
+if (isTomorrow(parsed)) return { label: 'Tomorrow', className: 'text-blue-600' }; 
   return { label: formatDate(date), className: 'text-muted' };
 }
 

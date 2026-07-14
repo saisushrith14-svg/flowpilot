@@ -16,6 +16,7 @@ import {
   ChevronLeft,
   Zap,
   LogOut,
+  Trash2,
 } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { useApp } from '@/context/AppContext';
@@ -35,10 +36,11 @@ const navItems = [
   { to: ROUTES.FILES, label: 'Files', icon: FileText },
   { to: ROUTES.NOTIFICATIONS, label: 'Notifications', icon: Bell },
   { to: ROUTES.ANALYTICS, label: 'Analytics', icon: BarChart3 },
+  { to: ROUTES.TRASH, label: 'Trash Bin', icon: Trash2 },
 ];
 
 export function Sidebar() {
-  const { sidebarOpen, setSidebarOpen, notifications } = useApp();
+  const { sidebarOpen, setSidebarOpen, notifications, deletedItems } = useApp();
   const { logout } = useAuth();
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   const unreadCount = notifications.filter((n) => !n.read).length;
@@ -46,7 +48,7 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        'fixed left-0 top-0 z-30 flex h-full flex-col border-r-2 border-ink bg-white transition-all duration-300',
+        'fixed left-0 top-0 z-30 flex h-full flex-col border-r-2 border-ink bg-surface transition-all duration-300',
         sidebarOpen ? 'w-64' : 'w-[76px]',
         'max-md:shadow-brutal-lg',
         !sidebarOpen && 'max-md:-translate-x-full max-md:w-64'
@@ -89,6 +91,11 @@ export function Sidebar() {
                     {unreadCount}
                   </span>
                 )}
+                {sidebarOpen && item.to === ROUTES.TRASH && deletedItems.length > 0 && (
+                  <span className="flex h-5 min-w-5 items-center justify-center rounded-full border-2 border-ink bg-pink px-1.5 text-[10px] font-extrabold text-white">
+                    {deletedItems.length}
+                  </span>
+                )}
               </NavLink>
             </li>
           ))}
@@ -119,7 +126,11 @@ export function Sidebar() {
 
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="absolute -right-3.5 top-20 flex h-7 w-7 items-center justify-center rounded-xl border-2 border-ink bg-yellow shadow-brutal-sm hover:shadow-brutal"      >
+        className={cn(
+          'absolute -right-3.5 top-20 flex h-7 w-7 items-center justify-center rounded-xl border-2 border-ink bg-yellow shadow-brutal-sm hover:shadow-brutal',
+          !sidebarOpen && 'max-md:hidden'
+        )}
+      >
         <ChevronLeft className={cn('h-4 w-4 transition-transform', !sidebarOpen && 'rotate-180')} />
       </button>
 

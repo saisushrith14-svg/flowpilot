@@ -120,6 +120,7 @@ export interface UserProfile {
 }
 
 export interface AppSettings {
+  theme?: 'light' | 'dark' | 'system';
   language: string;
   timezone: string;
   dateFormat: string;
@@ -154,6 +155,11 @@ export interface AuthUser {
   password: string;
   avatar: string;
   createdAt: string;
+  securityQuestions?: {
+    placeOfBirth: string;
+    petName: string;
+    favPlace: string;
+  };
 }
 
 export interface AuthSession {
