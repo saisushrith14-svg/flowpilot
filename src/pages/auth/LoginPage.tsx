@@ -52,7 +52,7 @@ export function LoginPage() {
 
         <Input
           label="Password"
-          type="text"
+          type="password"
           placeholder="••••••••"
           error={errors.password?.message}
           {...register('password')}

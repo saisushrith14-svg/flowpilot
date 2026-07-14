@@ -24,6 +24,7 @@ import { ProjectDetailPage } from '@/pages/ProjectDetailPage';
 import { TasksPage } from '@/pages/TasksPage';
 import { KanbanPage } from '@/pages/KanbanPage';
 import { CalendarPage } from '@/pages/CalendarPage';
+import { TimelinePage } from '@/pages/TimelinePage';
 import { TeamPage } from '@/pages/TeamPage';
 import { ActivityPage } from '@/pages/ActivityPage';
 import { FilesPage } from '@/pages/FilesPage';
@@ -47,7 +48,7 @@ export default function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/careers" element={<CareersPage />} />
-                <Route path="/privacy" element={<PrivacyPage />} />
+                <Route path="/privacy-policy" element={<PrivacyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path={ROUTES.LOGIN} element={<PublicOnlyRoute><LoginPage /></PublicOnlyRoute>} />
                 <Route path={ROUTES.REGISTER} element={<PublicOnlyRoute><RegisterPage /></PublicOnlyRoute>} />
@@ -67,6 +68,7 @@ export default function App() {
                   <Route path={ROUTES.TASKS} element={<TasksPage />} />
                   <Route path={ROUTES.KANBAN} element={<KanbanPage />} />
                   <Route path={ROUTES.CALENDAR} element={<CalendarPage />} />
+                  <Route path={ROUTES.TIMELINE} element={<TimelinePage />} />
                   <Route path={ROUTES.TEAM} element={<TeamPage />} />
                   <Route path={ROUTES.ACTIVITY} element={<ActivityPage />} />
                   <Route path={ROUTES.FILES} element={<FilesPage />} />
